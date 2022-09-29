@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: url(../gambar/bgc1.jpg);
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  height: 100vh;
+  margin: -20px 0 50px;
+  padding: 10px;
+}
+/* Navbar */
+nav {
+  display: flex;
+  background-color: 0, 0, 0, 0.5;
+  justify-content: space-around;
+  color: white;
+  height: 50px;
+  align-items: center;
+}
+nav .logo {
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 3px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 99;
+}
+nav ul li a:hover {
+  color: #00b4cf;
+}
+
+/* hamburger menu */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* hambureger menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: grey;
+  transform: rotate(45deg) translate(-2px, -2px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: grey;
+  transform: rotate(-45deg) translate(-2px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* responsive breakpoint */
+
+/* ukuran device tablet*/
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+/* ukuran device mobile*/
+@media screen and (max-width: 576px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: 0, 0, 0, 0.5;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 99;
+  }
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 99;
+  }
+}
+/* form contact */
+
+.container {
+  background-color: #ffffff17;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 522px;
+  min-width: 370px;
+}
+
+.card-container {
+  display: flex;
+}
+
+.left {
+  flex: 1;
+  height: 480px;
+  background-color: #0000009d;
+}
+
+.right {
+  display: flex;
+  flex: 1;
+  height: 521px;
+  background-color: #ffffff17;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex: 1;
+  height: 522px;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.left-container {
+  height: 50%;
+  width: 80%;
+  text-align: center;
+  line-height: 22px;
+}
+
+.left p {
+  font-size: 0.9rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+p a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.right-container {
+  width: 70%;
+  height: 80%;
+  text-align: center;
+}
+
+input,
+textarea {
+  background-color: #eee;
+  border-radius: 5%;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid #00b4cf;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #00b4cf;
+  background-color: #00b4cf;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-out;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+textarea {
+  height: 90px;
+}
+/* responsive */
+
+@media only screen and (max-width: 600px) {
+  .left {
+    display: none;
+  }
+
+  .lg-view {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sm-view {
+    display: none;
+  }
+}
